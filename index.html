@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hangman!</title>
-</head>
-<body>
-    
-</body>
-</html>
+
+<title>Psychic Game</title>
+
+<p id="output"> Can you guess what number I'm thinking of?</p>
+<input id="input" type="text" placeholder="Enter your guess">
+ <button>Guess</button>
+
+ <script type="text/javascript">
+ 
+ var mysteryNumber = 27;
+ var playerGuess = 0;
+
+ var input = document.querySelector("#input");
+ var output = document.querySelector("#output");
+
+ var button = document.querySelector("button");
+ button.style.cursor = "pointer";
+ button.addEventListener("click", clickHandler, false);
+
+ function clickHandler()
+ {
+     playGame();
+ }
+
+ function playGame()
+ {
+     playersGuess = parseInt(input.value);
+     
+     if (playersGuess > mysteryNumber)
+     {
+         output.innerHTML = "That's too high.";
+     }
+ 
+     else if (playersGuess < mysteryNumber)
+     {
+        output.innerHTML = "That's too low.";
+    }
+    else  {
+output.innerHTML = "You got it!";
+    }
+ }
+ 
+ 
+ 
+
+ if (playersGuess === mysteryNumber){ 
+     win = win + 1;
+     alert("win");
+ }
+ 
+
+ 
+ </script>
