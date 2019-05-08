@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 
 <title>Psychic Game</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <p id="output"> Can you guess what number I'm thinking of?</p>
-<input id="input" type="text" placeholder="Enter your guess">
- <button>Guess</button>
+<input id="input-box" type="text" placeholder="Enter your guess">
+ <button id="guess-button">Guess</button>
+<p id= "output-wins">Wins:</p>
 
+<p id="output">Losses:</p>
+
+<p id="output">Guesses Left:</p>
+
+<p id="output">Your Guesses So Far:</p>
  <script type="text/javascript">
  
  var mysteryNumber = 27;
  var playerGuess = 0;
 
- var input = document.querySelector("#input");
+ var input = document.getElementById("input-box");
  var output = document.querySelector("#output");
 
- var button = document.querySelector("button");
+ var button = document.getElementById("guess-button");
+ 
  button.style.cursor = "pointer";
  button.addEventListener("click", clickHandler, false);
 
  function clickHandler()
  {
-     playGame();
+    //  playGame();
+    var userGuess = parseInt(input.value);
+    var computerGuess = 50;
+    console.log("userGuess", typeof userGuess);
+    console.log("computerGuess:", typeof computerGuess);
+    if (userGuess === computerGuess) {
+        alert("you guessed it right");
+    } else {
+        alert("You guessed it wrong");
+    }
+    // alert(userGuess)
  }
 
  function playGame()
@@ -42,13 +60,16 @@ output.innerHTML = "You got it!";
  }
  
  
- 
 
- if (playersGuess === mysteryNumber){ 
-     win = win + 1;
-     alert("win");
- }
- 
 
- 
+function winner() {
+   if (test3.innerHTML == "You win!") {
+
+   win = win + 1;
+   }
+
+}
+
  </script>
+
+<img src="assets/images/fortune_teller-wallpaper-1024x768.jpg" alt="fortune_teller-wallpaper-1024x768" height="500px" width="500px">
